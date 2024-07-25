@@ -6,13 +6,14 @@
     <title>Admin Login and Signup</title>
     <!-- for tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
     <script type="module" src="signup.js"></script>
     <section class="flex flex-col justify-start">
 
-        <nav class="w-full bg-orange-500 py-5 flex justify-between items-center mb-10">
+        <nav class="w-full bg-orange-500 py-3 flex justify-between items-center mb-10">
             <div class="flex w-full items-center">
                 <div class="rounded-full mx-7 flex justify-start gap-7">
                     <img class='rounded-full w-14' src="..\images\egg_bucket_logo.jpg"/>
@@ -27,12 +28,14 @@
         <div class="container">
             <div class="user signinBox">
                 <div class="imgBox">
-                    <img src="https://t3.ftcdn.net/jpg/06/53/40/10/240_F_653401076_ySUEKCsR86TSxIDzqB09LBdamu21Y2gV.jpg" alt="">
+                    <img src="../images/roadways1.png" alt="">
                 </div>
                 <div class="formBox">
                     <form id="login-form">
                         <h2>Admin Login</h2>
+                        <span class="text-lg font-semibold"><i class="fa-solid fa-user-tie mr-3" style="color: #505050;"></i>Email</span>
                         <input type="email" name="email" placeholder="Enter Email" id="login-email" required>
+                        <span class="mt-10 text-lg font-semibold"><i class="fa-solid fa-key mr-3" style="color: #505050;"></i>Password</span>
                         <input type="password" name="password" placeholder="Enter Password" id="login-password" required>
                         <input type="submit" value="Login">
                         <!-- <p class="signup">Don't have an Account? <a href="#" onclick="doToggle()">Sign Up</a></p> -->
@@ -43,6 +46,7 @@
                 <div class="formBox">
                     <form id="signup-form">
                         <h2>Create An Admin Account</h2>
+                        
                         <input type="text" name="name" placeholder="Enter name" id="signup-name" required>
                         <input type="number" name="phone_number" placeholder="Enter Ph.No" id="signup-phone" required>
                         <input type="email" name="email" placeholder="Enter Email" id="signup-email" required>

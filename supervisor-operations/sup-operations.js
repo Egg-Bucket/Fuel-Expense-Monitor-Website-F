@@ -20,7 +20,6 @@ const database = getDatabase(app);
 
 // References
 const uploadsRef = ref(database, 'uploads/');
-
 // Function to display vehicle data
 function displayVehicleData(snapshot) {
     const vehicleData = document.getElementById('vehicleData');
@@ -32,9 +31,9 @@ function displayVehicleData(snapshot) {
 
         vehicleData.innerHTML += `
             <tr>
-            <td class="border px-4 py-2">${upload.driverName}</td>
-            <td class="border px-4 py-2">${upload.vehicleName}</td>
-            <td class="border px-4 py-2">${upload.date}</td>
+                <td class="border px-4 py-2">${upload.driverName}</td>
+                <td class="border px-4 py-2">${upload.vehicleName}</td>
+                <td class="border px-4 py-2">${upload.date}</td>
                 <td class="border px-4 py-2">${upload.fuelType}</td>
                 <td class="border px-4 py-2">${upload.odometerValue}</td>
                 <td class="border px-4 py-2"><img src="${upload.odometerImageUrl}" alt="Odometer Image" class="w-16 h-16 object-cover cursor-pointer" onclick="window.open('${upload.odometerImageUrl}', '_blank')"></td>
@@ -48,19 +47,6 @@ function displayVehicleData(snapshot) {
         `;
     });
 }
-
-// Toggle verification status
-window.toggleVerify = function(uploadKey, currentStatus) {
-    const newStatus = !currentStatus;
-    update(ref(database, 'uploads/' + uploadKey), { verified: newStatus })
-        .then(() => {
-            alert('Verification status updated successfully!');
-            fetchAndDisplayData(); // Refresh the data to reflect changes
-        })
-        .catch(error => {
-            console.error('Error updating verification status:', error);
-        });
-};
 
 // Function to convert date from yyyy-mm-dd to dd-mm-yyyy
 function formatDate(dateString) {
@@ -95,9 +81,12 @@ function fetchAndDisplayData(filter = {}) {
 
         // Filter by verification status
         if (filter.verificationStatus !== undefined) {
+            console.log(`Filtering by verification status: ${filter.verificationStatus}`);
             sortedData = sortedData.filter(childSnapshot => {
                 const upload = childSnapshot.val();
-                return upload.verified === filter.verificationStatus;
+                const verifiedStatus = upload.verified !== undefined ? upload.verified : false;
+                console.log(`Upload verified status: ${verifiedStatus}`);
+                return verifiedStatus === filter.verificationStatus;
             });
         }
 

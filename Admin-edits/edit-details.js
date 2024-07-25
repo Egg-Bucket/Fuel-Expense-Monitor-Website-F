@@ -140,7 +140,7 @@ function fetchAndDisplayData(filter = {}) {
         if (filter.verificationStatus !== undefined) {
             sortedData = sortedData.filter(childSnapshot => {
                 const upload = childSnapshot.val();
-                return upload.verified === filter.verificationStatus;
+                return (upload.verified !== undefined ? upload.verified : false) === filter.verificationStatus;
             });
         }
 

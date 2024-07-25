@@ -10,23 +10,23 @@
 
 <body class="bg-orange-50">
 
-    <nav class="w-full bg-orange-500 py-5 flex justify-between items-center">
+    <nav class="w-full bg-orange-500 py-3 flex justify-between items-center">
         <div class="flex w-full items-center">
             <div class="rounded-full mx-7 flex justify-start gap-7">
-                <img class='rounded-full w-14' src="..\images\egg_bucket_logo.jpg"/>
-                <h1 class="font-bold text-gray-800 text-[30px]">Egg Bucket</h1>
+                <img class='rounded-full w-14' src="../images/egg_bucket_logo.jpg"/>
+                <h1 class="font-bold text-white text-gray-800 text-[30px]">Egg Bucket</h1>
             </div>
         </div>
-        <div class="mr-5 w-full flex justify-end gap-4">
-            <a href="../admin-SignupLogin/index.html" class="border-black border-2 px-4 py-2 font-medium rounded-full">Logout</a>
-            <a href="../admin-operations/index.html" class="border-black border-2 px-4 py-2 font-medium rounded-full">Go-back</a>
+        <div class="mr-10 flex gap-4">
+            <a href="../admin-operations/index.html" class="w-[100px] border-black border-2 px-4 py-2 font-medium rounded-full">Go-Back</a>
         </div>
     </nav>
+
     
     <!-- Form -->
-    <div class="max-w-md mx-auto mt-10">
+    <div class="max-w-md mx-auto mt-10 mb-10">
         <form id="supervisorForm" class="bg-white shadow-xl rounded-lg p-8 mb-4">
-            <h1 class="text-3xl font-medium tracking-tight pb-5  text-center ">Add Supervisors</h1>
+            <h1 class="text-3xl font-medium tracking-tight uppercase py-7 text-center ">Add Supervisors</h1>
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Supervisor Name:</label>
                 <input type="text" id="name" class="w-full bg-gray-200 border border-gray-300 rounded-lg py-2 px-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500" required>
@@ -46,7 +46,7 @@
     </div>
 
     <!-- Table -->
-    <div class="max-w-4xl mx-auto mt-10">
+    <div class="max-w-4xl mx-auto mt-10 mb-10">
         <table class="min-w-full bg-white">
             <thead class="bg-gray-800 text-white">
                 <tr>
