@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction:column;
+    gap:60px;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background: orange;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background: orange;
+    border-right: 1px solid #6c757d;
+}
+
+.tabs button {
+    padding: 15px;
+    border: none;
+    background-color: #495057;
+    color: #ffffff;
+    cursor: pointer;
+    border-bottom: 1px solid #6c757d;
+    text-align: left;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tabs button.active {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.tabs button:hover {
+    background-color: #007bff;
+}
+
+.tab-content {
+    flex: 1;
+    padding: 20px;
+    background: #ffffff;
+}
+
+h2 {
+    color: #495057;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form label {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.form input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form button:hover {
+    background-color: #218838;
+}
+
+.ta e {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #343a40;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.table tr:hover {
+    background-color: #e9ecef;
+}
+
+.table button {
+    padding: 6px 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.table button:hover {
+    background-color: #0056b3;
+}

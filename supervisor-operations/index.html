@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <nav class="w-full bg-orange-500 py-5 flex justify-between items-center">
+        <div class="flex w-full items-center">
+            <div class="rounded-full mx-7 flex justify-start gap-7">
+                <img class='rounded-full w-14' src="..\images\egg_bucket_logo.jpg"/>
+                <h1 class="font-bold text-gray-800 text-[30px]">Egg Bucket</h1>
+            </div>
+        </div>
+        <div class="mr-10 flex gap-4">
+            <a href="../index.html" class="w-[100px] border-black text-center border-2 px-4 py-2 font-medium rounded-full">logout</a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4">
+
+        <h1 class="font-bold text-4xl underline py-5 mb-10"> Supervisor Panel : </h1>
+        <div class="flex justify-between items-center mb-4">
+            <div class="flex space-x-4">
+                <button id="all" class="px-4 py-2 bg-blue-500 text-white rounded">ALL</button>
+                <button id="verified" class="px-4 py-2 bg-green-500 text-white rounded">Verified</button>
+                <button id="unverified" class="px-4 py-2 bg-red-500 text-white rounded">Unverified</button>
+            </div>
+            <div class="flex space-x-4">
+                <input type="date" id="searchDate" placeholder="Search by date" class="p-2 border rounded">
+                <input type="text" id="searchVehicleName" placeholder="Search by vehicle name" class="p-2 border rounded">
+                <select id="dateSort" class="p-2 border rounded">
+                    <option value="">Sort by date</option>
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+        </div>
+        <div class="bg-white shadow-md rounded p-4">
+            <table class="min-w-full table-auto">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2">Driver Name</th>
+                        <th class="px-4 py-2">Vehicle Name</th>
+                        <th class="px-4 py-2">Date</th>
+                        <th class="px-4 py-2">Fuel Type</th>
+                        <th class="px-4 py-2">Odometer Value</th>
+                        <th class="px-4 py-2">Odometer Image</th>
+                        <th class="px-4 py-2">Total Amount</th>
+                        <th class="px-4 py-2">Petrol Bunk Image</th>
+                        <th class="px-4 py-2">Verified</th>
+                        <th class="px-4 py-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="vehicleData">
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="sup-operations.js"></script>
+</body>
+</html>

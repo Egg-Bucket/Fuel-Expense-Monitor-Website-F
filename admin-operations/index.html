@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admin Dashboard</title>
+</head>
+
+<body class="bg-orange-50">
+
+    <nav class="w-full bg-orange-500 py-5 flex justify-between items-center">
+        <div class="flex w-full items-center">
+            <div class="rounded-full mx-7 flex justify-start gap-7">
+                <img class='rounded-full w-14' src="../images/egg_bucket_logo.jpg"/>
+                <h1 class="font-bold text-white text-gray-800 text-[30px]">Egg Bucket</h1>
+            </div>
+        </div>
+        <div class="mr-10 flex gap-4">
+            <a href="../index.html" class="border-black border-2 px-4 py-2 font-medium rounded-full">Logout</a>
+            <a href="../change-password/index.html" class="w-[180px] text-center border-black border-2 px-4 py-2 font-medium rounded-full">Change Password</a>
+        </div>
+    </nav>
+    
+    <!-- Main Buttons -->
+    <div class="max-w-4xl mx-auto mt-16 flex flex-col gap-10">
+        <a href="../Admin-edits/index.html" class="bg-orange-500 text-center hover:bg-orange-400 transition duration-300 text-white font-semibold py-6 px-4 rounded-xl text-5xl">
+            View Details
+        </a>
+        <a href="../admin-AddSupervisor/index.html" class="bg-orange-600 text-center hover:bg-orange-500 transition duration-300 text-white font-semibold py-6 px-4 rounded-xl text-5xl">
+            Add Supervisor
+        </a>
+        <a href="../admin-drivers/index.html" class="bg-orange-700 text-center hover:bg-orange-600 transition duration-300 text-white font-semibold py-6 px-4 rounded-xl text-5xl">
+            Add Driver
+        </a>
+        <a href="../admin-vehicles/index.html" class="bg-orange-800 text-center hover:bg-orange-700 transition duration-300 text-white font-semibold py-6 px-4 rounded-2xl text-5xl">
+            Add Vehicle
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Vehicle Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-orange-100">
+    <nav class="w-full bg-orange-500 py-5 flex justify-between items-center">
+        <div class="flex w-full items-center">
+            <div class="rounded-full mx-7 flex justify-start gap-7">
+                <img class="rounded-full w-14" src="../images/egg_bucket_logo.jpg"/>
+                <h1 class="font-bold text-white text-gray-800 text-2xl">Egg Bucket</h1>
+            </div>
+        </div>
+        <div class="mr-10 flex gap-4">
+            <a href="../admin-operations/index.html" class="w-28 text-center border-black border-2 px-4 py-2 font-medium rounded-full">Go-back</a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4 flex flex-col items-center">
+        <header class="mb-4">
+            <h1 class="text-2xl uppercase font-bold">Admin Vehicle Panel</h1>
+        </header>
+
+        <div class="mb-4 w-1/2">
+            <h2 class="text-xl font-semibold">Add Vehicle</h2>
+            <form id="addVehicleForm" class="bg-white p-4 rounded shadow-md">
+                <div class="mb-4">
+                    <label for="vehicleName" class="block text-gray-700">Vehicle Name:</label>
+                    <input type="text" id="vehicleName" class="w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="licenseNumber" class="block text-gray-700">License Number:</label>
+                    <input type="text" id="licenseNumber" class="w-full p-2 border rounded" required>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add Vehicle</button>
+            </form>
+        </div>
+
+        <hr/>
+
+        <div class="mb-4 w-1/4 flex flex-col items-center">
+            <h2 class="text-xl font-semibold">Search Vehicle</h2>
+            <input type="text" id="searchLicenseNumber" class="w-full p-2 border m-3 rounded" placeholder="Search by License Number">
+        </div>
+
+        <div class="bg-white w-1/2 p-4 rounded shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Vehicle List</h2>
+            <table id="vehiclesTable" class="min-w-full table-auto">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 border">Vehicle Name</th>
+                        <th class="px-4 py-2 border">License Number</th>
+                        <th class="px-4 py-2 border">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="vehiclesList"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

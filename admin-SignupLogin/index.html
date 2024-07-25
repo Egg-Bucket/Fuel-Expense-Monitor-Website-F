@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login and Signup</title>
+    <!-- for tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <script type="module" src="signup.js"></script>
+    <section class="flex flex-col justify-start">
+
+        <nav class="w-full bg-orange-500 py-5 flex justify-between items-center mb-10">
+            <div class="flex w-full items-center">
+                <div class="rounded-full mx-7 flex justify-start gap-7">
+                    <img class='rounded-full w-14' src="..\images\egg_bucket_logo.jpg"/>
+                    <h1 class="font-bold text-white text-gray-800 text-[30px]">Egg Bucket</h1>
+                </div>
+            </div>
+            <div class="mr-10 flex gap-4">
+                <a href="../index.html" class="w-[110px] text-center border-black border-2 px-4 py-2 font-medium rounded-full">Go-back</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="user signinBox">
+                <div class="imgBox">
+                    <img src="https://t3.ftcdn.net/jpg/06/53/40/10/240_F_653401076_ySUEKCsR86TSxIDzqB09LBdamu21Y2gV.jpg" alt="">
+                </div>
+                <div class="formBox">
+                    <form id="login-form">
+                        <h2>Admin Login</h2>
+                        <input type="email" name="email" placeholder="Enter Email" id="login-email" required>
+                        <input type="password" name="password" placeholder="Enter Password" id="login-password" required>
+                        <input type="submit" value="Login">
+                        <!-- <p class="signup">Don't have an Account? <a href="#" onclick="doToggle()">Sign Up</a></p> -->
+                    </form>
+                </div>
+            </div>
+            <div class="user signupBox">
+                <div class="formBox">
+                    <form id="signup-form">
+                        <h2>Create An Admin Account</h2>
+                        <input type="text" name="name" placeholder="Enter name" id="signup-name" required>
+                        <input type="number" name="phone_number" placeholder="Enter Ph.No" id="signup-phone" required>
+                        <input type="email" name="email" placeholder="Enter Email" id="signup-email" required>
+                        <input type="password" name="password" placeholder="Enter Password" id="signup-password" required>
+                        <input type="submit" value="Sign Up">
+                        <!-- <p class="signup">Already have an Account? <a href="#" onclick="doToggle()">Login</a></p> -->
+                    </form>
+                </div>
+                <div class="imgBox">
+                    <img src="https://graphicriver.img.customer.envatousercontent.com/files/465087611/preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=e5cff70914ddc704fd3d845a3ec9f8e4" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <script type="text/javascript">
+        function doToggle(){
+            var container = document.querySelector('.container');
+            container.classList.toggle('active');
+        }
+    </script> -->
+</body>
+</html>

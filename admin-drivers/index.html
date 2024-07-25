@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Driver Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-100">
+    
+    <nav class="w-full bg-orange-500 py-5 flex justify-between items-center">
+        <div class="flex w-full items-center">
+            <div class="rounded-full mx-7 flex justify-start gap-7">
+                <img class='rounded-full w-14' src="../images/egg_bucket_logo.jpg"/>
+                <h1 class="font-bold text-white text-gray-800 text-[30px]">Egg Bucket</h1>
+            </div>
+        </div>
+        <div class="mr-10 flex gap-4">
+            <a href="../admin-operations/index.html" class="w-[100px] border-black border-2 px-4 py-2 font-medium rounded-full">Go-Back</a>
+        </div>
+    </nav>
+
+    <div class="w-full px-4 py-6 flex flex-col items-center">
+        <h1 class="w-3/4 text-3xl font-semibold py-5 text-center text-gray-800">Admin Driver Panel</h1>
+
+        <!-- Add Driver Section -->
+        <div class="w-3/4 bg-white p-5 rounded shadow-md mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Add Driver</h2>
+            <form id="addDriverForm" class="flex flex-col">
+                <label for="name" class="mb-2">Name:</label>
+                <input type="text" id="name" required class="p-2 mb-4 border rounded">
+                <label for="phone" class="mb-2">Phone No:</label>
+                <input type="text" id="phone" required class="p-2 mb-4 border rounded">
+                <label for="dl" class="mb-2">DL No:</label>
+                <input type="text" id="dl" required class="p-2 mb-4 border rounded">
+                <label for="debitCardNo" class="mb-2">Debit Card No:</label>
+                <input type="text" id="debitCardNo" required class="p-2 mb-4 border rounded">
+                <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-500">Add Driver</button>
+            </form>
+        </div>
+
+        <!-- Search Driver Section -->
+        <div class="w-3/4 bg-white p-5 rounded shadow-md mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Search Driver by Name</h2>
+            <input type="text" id="searchName" class="p-2 mb-4 border rounded w-full" placeholder="Enter driver's name">
+        </div>
+
+        <!-- View Drivers Section -->
+        <div class="w-3/4 bg-white p-5 rounded shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">Driver List</h2>
+            <div id="driverList" class="py-5"></div>
+        </div>
+    </div>
+
+    <script type="module" src="add-driver.js"></script>
+</body>
+</html>
