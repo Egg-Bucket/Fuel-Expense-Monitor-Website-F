@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supervisor Panel</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
 </head>
 <body class="bg-gray-100">
 
@@ -37,6 +38,7 @@
                     <option value="asc">Ascending</option>
                     <option value="desc">Descending</option>
                 </select>
+                <button id="importSpreadsheet" class="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-400">Import Spreadsheet</button>
             </div>
         </div>
         <div class="bg-white shadow-md rounded p-4">

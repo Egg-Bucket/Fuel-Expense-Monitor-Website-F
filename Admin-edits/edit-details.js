@@ -176,3 +176,44 @@ document.getElementById('dateSort').addEventListener('change', (event) => {
     const dateSort = event.target.value;
     fetchAndDisplayData({ dateSort });
 });
+
+//import spreadsheet :
+
+document.getElementById('importSpreadsheet').addEventListener('click', () => {
+    onValue(uploadsRef, (snapshot) => {
+        let data = [];
+        snapshot.forEach(childSnapshot => {
+            const upload = childSnapshot.val();
+            data.push({
+                Date: upload.date,
+                DriverName: upload.driverName,
+                VehicleName: upload.vehicleName,
+                FuelType: upload.fuelType,
+                OdometerValue: upload.odometerValue,
+                OdometerImageUrl: upload.odometerImageUrl,
+                TotalAmount: upload.totalAmount,
+                PetrolBunkImageUrl: upload.petrolBunkImageUrl,
+                Verified: upload.verified ? 'Yes' : 'No'
+            });
+        });
+
+        // Create a new workbook and add the data
+        let wb = XLSX.utils.book_new();
+        let ws = XLSX.utils.json_to_sheet(data);
+        XLSX.utils.book_append_sheet(wb, ws, "Uploads");
+
+        // Generate a file and trigger download
+        let wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+        function s2ab(s) {
+            let buf = new ArrayBuffer(s.length);
+            let view = new Uint8Array(buf);
+            for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+            return buf;
+        }
+        let blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
+        let link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'fuel-expense-data.xlsx';
+        link.click();
+    });
+});
