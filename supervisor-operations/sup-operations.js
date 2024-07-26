@@ -20,6 +20,7 @@ const database = getDatabase(app);
 
 // References
 const uploadsRef = ref(database, 'uploads/');
+
 // Function to display vehicle data
 function displayVehicleData(snapshot) {
     const vehicleData = document.getElementById('vehicleData');
@@ -53,6 +54,20 @@ function formatDate(dateString) {
     const [year, month, day] = dateString.split('-');
     return `${day}-${month}-${year}`;
 }
+
+// Function to toggle verification status
+window.toggleVerify = function(uploadKey, verified) {
+    if (!verified) {
+        const uploadRef = ref(database, `uploads/${uploadKey}`);
+        update(uploadRef, { verified: true })
+            .then(() => {
+                console.log('Verification status updated successfully.');
+            })
+            .catch((error) => {
+                console.error('Error updating verification status:', error);
+            });
+    }
+};
 
 // Fetch and display data with filters applied
 function fetchAndDisplayData(filter = {}) {
