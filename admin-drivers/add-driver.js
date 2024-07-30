@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const debitCardNo = document.getElementById('debitCardNo').value;
 
         const dlLength = 15;                           // Minimum length for driver license in India
-        const DCLength = 12;                           // Minimum length for debit card in India
+        const DCLength = 16;                           // Minimum length for debit card in India
 
         if (!name || !phone || !dl || !debitCardNo) {
             alert('All fields are required!');

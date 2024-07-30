@@ -37,7 +37,7 @@ function displayVehicleData(snapshot) {
                 <td class="border px-4 py-2">${upload.date}</td>
                 <td class="border px-4 py-2">${upload.fuelType}</td>
                 <td class="border px-4 py-2">${upload.odometerValue}</td>
-                <td class="border px-4 py-2"><img src="${upload.odometerImageUrl}" alt="Odometer Image" class="w-16 h-16 object-cover cursor-pointer" onclick="window.open('${upload.odometerImageUrl}', '_blank')"></td>
+        <!--        <td class="border px-4 py-2"><img src="${upload.odometerImageUrl}" alt="Odometer Image" class="w-16 h-16 object-cover cursor-pointer" onclick="window.open('${upload.odometerImageUrl}', '_blank')"></td> -->
                 <td class="border px-4 py-2">${upload.totalAmount}</td>
                 <td class="border px-4 py-2"><img src="${upload.petrolBunkImageUrl}" alt="Petrol Bunk Image" class="w-16 h-16 object-cover cursor-pointer" onclick="window.open('${upload.petrolBunkImageUrl}', '_blank')"></td>
                 <td class="border px-4 py-2">${upload.verified ? 'Yes' : 'No'}</td>
@@ -148,41 +148,41 @@ document.getElementById('dateSort').addEventListener('change', (event) => {
 });
 
 // importing spreadsheet 
-document.getElementById('importSpreadsheet').addEventListener('click', () => {
-    onValue(uploadsRef, (snapshot) => {
-        let data = [];
-        snapshot.forEach(childSnapshot => {
-            const upload = childSnapshot.val();
-            data.push({
-                Date: upload.date,
-                DriverName: upload.driverName,
-                VehicleName: upload.vehicleName,
-                FuelType: upload.fuelType,
-                OdometerValue: upload.odometerValue,
-                OdometerImageUrl: upload.odometerImageUrl,
-                TotalAmount: upload.totalAmount,
-                PetrolBunkImageUrl: upload.petrolBunkImageUrl,
-                Verified: upload.verified ? 'Yes' : 'No'
-            });
-        });
+// document.getElementById('importSpreadsheet').addEventListener('click', () => {
+//     onValue(uploadsRef, (snapshot) => {
+//         let data = [];
+//         snapshot.forEach(childSnapshot => {
+//             const upload = childSnapshot.val();
+//             data.push({
+//                 Date: upload.date,
+//                 DriverName: upload.driverName,
+//                 VehicleName: upload.vehicleName,
+//                 FuelType: upload.fuelType,
+//                 OdometerValue: upload.odometerValue,
+//                 OdometerImageUrl: upload.odometerImageUrl,
+//                 TotalAmount: upload.totalAmount,
+//                 PetrolBunkImageUrl: upload.petrolBunkImageUrl,
+//                 Verified: upload.verified ? 'Yes' : 'No'
+//             });
+//         });
 
-        // Create a new workbook and add the data
-        let wb = XLSX.utils.book_new();
-        let ws = XLSX.utils.json_to_sheet(data);
-        XLSX.utils.book_append_sheet(wb, ws, "Uploads");
+//         // Create a new workbook and add the data
+//         let wb = XLSX.utils.book_new();
+//         let ws = XLSX.utils.json_to_sheet(data);
+//         XLSX.utils.book_append_sheet(wb, ws, "Uploads");
 
-        // Generate a file and trigger download
-        let wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
-        function s2ab(s) {
-            let buf = new ArrayBuffer(s.length);
-            let view = new Uint8Array(buf);
-            for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-            return buf;
-        }
-        let blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
-        let link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'fuel-expense-data.xlsx';
-        link.click();
-    });
-});
+//         // Generate a file and trigger download
+//         let wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+//         function s2ab(s) {
+//             let buf = new ArrayBuffer(s.length);
+//             let view = new Uint8Array(buf);
+//             for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+//             return buf;
+//         }
+//         let blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
+//         let link = document.createElement('a');
+//         link.href = URL.createObjectURL(blob);
+//         link.download = 'fuel-expense-data.xlsx';
+//         link.click();
+//     });
+// });
