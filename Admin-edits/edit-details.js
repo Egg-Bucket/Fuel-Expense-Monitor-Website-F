@@ -37,9 +37,9 @@ function displayVehicleData(snapshot) {
                 <td class="border px-4 py-2">${upload.date}</td>
                 <td class="border px-4 py-2">${upload.fuelType}</td>
                 <td class="border px-4 py-2">${upload.odometerValue}</td>
-            <!--    <td class="border px-4 py-2"><a href="${upload.odometerImageUrl}" target="_blank"><img src="${upload.odometerImageUrl}" class="w-16 h-16 object-cover"></a></td>-->
+            <!--    <td class="border px-4 py-2"><a href="${upload.odometerImage}" target="_blank"><img src="${upload.odometerImageUrl}" class="w-16 h-16 object-cover"></a></td>-->
                 <td class="border px-4 py-2">${upload.totalAmount}</td>
-                <td class="border px-4 py-2"><a href="${upload.petrolBunkImageUrl}" target="_blank"><img src="${upload.petrolBunkImageUrl}" class="w-16 h-16 object-cover"></a></td>
+                <td class="border px-4 py-2"><a href="${upload.petrolBunkImage}" target="_blank"><img src="${upload.petrolBunkImage}" class="w-16 h-16 object-cover"></a></td>
                 <td class="border px-4 py-2">${upload.verified ? 'Yes' : 'No'}</td>
                 <td class="border px-4 py-2">
                     <button class="toggle-verify-btn bg-${upload.verified ? 'green' : 'yellow'}-500 text-white px-2 py-1 rounded" 

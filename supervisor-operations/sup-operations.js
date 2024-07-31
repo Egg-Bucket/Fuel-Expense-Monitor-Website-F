@@ -39,7 +39,7 @@ function displayVehicleData(snapshot) {
                 <td class="border px-4 py-2">${upload.odometerValue}</td>
         <!--        <td class="border px-4 py-2"><img src="${upload.odometerImageUrl}" alt="Odometer Image" class="w-16 h-16 object-cover cursor-pointer" onclick="window.open('${upload.odometerImageUrl}', '_blank')"></td> -->
                 <td class="border px-4 py-2">${upload.totalAmount}</td>
-                <td class="border px-4 py-2"><img src="${upload.petrolBunkImageUrl}" alt="Petrol Bunk Image" class="w-16 h-16 object-cover cursor-pointer" onclick="window.open('${upload.petrolBunkImageUrl}', '_blank')"></td>
+                <td class="border px-4 py-2"><img src="${upload.petrolBunkImage}" alt="Petrol Bunk Image" class="w-16 h-16 object-cover cursor-pointer" onclick="window.open('${upload.petrolBunkImage}', '_blank')"></td>
                 <td class="border px-4 py-2">${upload.verified ? 'Yes' : 'No'}</td>
                 <td class="border px-4 py-2">
                     <button class="bg-yellow-500 text-white px-2 py-1 rounded ${upload.verified ? 'cursor-not-allowed opacity-50' : ''}" onclick="toggleVerify('${uploadKey}', ${upload.verified})" ${upload.verified ? 'disabled' : ''}>${upload.verified ? 'Verified' : 'Verify'}</button>
